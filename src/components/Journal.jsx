@@ -3,28 +3,36 @@ import React from 'react';
 const Journal = () => {
   const projects = [
     {
-      title: "Fligno Inventory System",
-      description: "A comprehensive inventory management system designed to streamline tracking and optimize supply chain operations with real-time monitoring and reporting features.",
-      technologies: ["React", "Laravel", "MySQL", "PHP", "Laragon"],
-      image: "https://i.ibb.co/K0zLj2F/image-1.png",
-      github: "#",
-      demo: "#"
+      title: "XU - Physical Plant Office Work Order System",
+      description: "A web-based work order and resource management system designed to streamline operations for the Physical Plant Office with user authentication and real-time notifications.",
+      technologies: ["Laravel", "Bootstrap", "PostgreSQL", "Digital Ocean"],
+      image: "https://i.ibb.co/7TJsDkz/Picture1.png",
+      period: "MAR 2025 - MAY 2025",
+      type: "Capstone Project"
     },
     {
-      title: "Cruiseship Booking System",
-      description: "A user-friendly booking system designed to simplify the process of booking and managing cruiseship reservations with integrated payment processing.",
-      technologies: ["PHP", "MySQL", "Bootstrap", "JavaScript"],
-      image: "https://i.ibb.co/LggMkSZ/image.png",
-      github: "#",
-      demo: "#"
+      title: "Fligno Inventory System",
+      description: "A comprehensive inventory management system designed to streamline tracking and optimize supply chain operations with real-time monitoring and reporting features.",
+      technologies: ["Laravel", "React", "MySQL", "PHP", "Laragon"],
+      image: "https://i.ibb.co/K0zLj2F/image-1.png",
+      period: "AUG 2024 - NOV 2024",
+      type: "Internship Project"
     },
     {
       title: "XU-NSP Website",
       description: "The Xavier University - Night School Program Website developed using WordPress content management system with custom themes and functionality.",
-      technologies: ["WordPress", "PHP", "CSS3", "JavaScript"],
-      image: "https://i.ibb.co/M8xRKFT/image.png",
-      github: "#",
-      demo: "#"
+      technologies: ["WordPress CMS", "PHP", "MySQL", "JavaScript"],
+      image: "https://i.ibb.co/tw8RR350/Screenshot-2024-06-04-154609.png",
+      period: "JUN 2024 - JUL 2024",
+      type: "Academic Project"
+    },
+    {
+      title: "Cruiseship Booking System",
+      description: "A user-friendly booking system designed to simplify the process of booking and managing cruiseship reservations with integrated payment processing.",
+      technologies: ["JavaScript", "HTML", "CSS"],
+      image: "https://i.ibb.co/LggMkSZ/image.png",
+      period: "SEP 2023 - NOV 2023",
+      type: "Academic Project"
     }
   ];
 
@@ -70,7 +78,20 @@ const Journal = () => {
               </div>
 
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-white mb-3">{project.title}</h3>
+                {project.period && (
+                  <div className="text-center mb-3">
+                    <span className="px-3 py-1 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 text-blue-300 rounded-full text-xs font-semibold border border-blue-400/30">
+                      {project.period}
+                    </span>
+                  </div>
+                )}
+
+                <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
+
+                {project.type && (
+                  <p className="text-cyan-300 text-sm font-medium mb-3">{project.type}</p>
+                )}
+
                 <p className="text-gray-300 mb-4 text-sm leading-relaxed">{project.description}</p>
 
                 <div className="flex flex-wrap gap-2 mb-4">
@@ -83,8 +104,6 @@ const Journal = () => {
                     </span>
                   ))}
                 </div>
-
-
               </div>
             </div>
           ))}
