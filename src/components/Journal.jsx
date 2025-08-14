@@ -4,6 +4,9 @@ const Journal = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [currentMiniSlide, setCurrentMiniSlide] = useState(0);
+  const [dragStart, setDragStart] = useState(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragOffset, setDragOffset] = useState(0);
 
   const projects = [
     {
@@ -50,6 +53,48 @@ const Journal = () => {
 
   const goToSlide = (index) => {
     setCurrentSlide(index);
+  };
+
+  // Drag functionality
+  const handleDragStart = (e) => {
+    const clientX = e.type === 'mousedown' ? e.clientX : e.touches[0].clientX;
+    setDragStart(clientX);
+    setIsDragging(true);
+    setIsPaused(true); // Pause auto-advance while dragging
+    setDragOffset(0); // Reset offset
+  };
+
+  const handleDragEnd = (e) => {
+    if (!isDragging || dragStart === null) return;
+
+    const clientX = e.type === 'mouseup' ? e.clientX : e.changedTouches[0].clientX;
+    const dragDistance = dragStart - clientX;
+    const threshold = 50; // Minimum drag distance to trigger slide change
+
+    if (Math.abs(dragDistance) > threshold) {
+      if (dragDistance > 0) {
+        // Dragged left - go to next slide
+        nextSlide();
+      } else {
+        // Dragged right - go to previous slide
+        prevSlide();
+      }
+    }
+
+    // Reset drag state
+    setDragStart(null);
+    setIsDragging(false);
+    setDragOffset(0);
+    setIsPaused(false); // Resume auto-advance
+  };
+
+  const handleDragMove = (e) => {
+    if (!isDragging || dragStart === null) return;
+    e.preventDefault(); // Prevent text selection while dragging
+
+    const clientX = e.type === 'mousemove' ? e.clientX : e.touches[0].clientX;
+    const currentOffset = clientX - dragStart;
+    setDragOffset(currentOffset);
   };
 
   // Auto-advance slideshow every 4 seconds (pause on hover)
@@ -101,8 +146,19 @@ const Journal = () => {
           {/* Main Slide Container */}
           <div className="overflow-hidden rounded-xl">
             <div
-              className="flex transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+              className={`flex cursor-grab active:cursor-grabbing select-none ${
+                isDragging ? '' : 'transition-transform duration-500 ease-in-out'
+              }`}
+              style={{
+                transform: `translateX(calc(-${currentSlide * 100}% + ${dragOffset}px))`
+              }}
+              onMouseDown={handleDragStart}
+              onMouseUp={handleDragEnd}
+              onMouseMove={handleDragMove}
+              onMouseLeave={handleDragEnd}
+              onTouchStart={handleDragStart}
+              onTouchEnd={handleDragEnd}
+              onTouchMove={handleDragMove}
             >
               {projects.map((project, index) => (
                 <div key={index} className="w-full flex-shrink-0">
