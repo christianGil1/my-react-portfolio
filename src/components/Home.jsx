@@ -1,6 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Worker, Viewer } from '@react-pdf-viewer/core';
+import { toolbarPlugin } from '@react-pdf-viewer/toolbar';
+import '@react-pdf-viewer/core/lib/styles/index.css';
+import '@react-pdf-viewer/toolbar/lib/styles/index.css';
 
 const Home = () => {
+  const [showPdfModal, setShowPdfModal] = useState(false);
+  const toolbarPluginInstance = toolbarPlugin();
+
+  const openPdfModal = () => {
+    setShowPdfModal(true);
+  };
+
+  const closePdfModal = () => {
+    setShowPdfModal(false);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
       {/* Hero Section */}
@@ -29,11 +45,17 @@ const Home = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="px-8 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-cyan-600 transition-all duration-300 transform hover:scale-105">
+            <Link
+              to="/journal"
+              className="px-8 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-cyan-600 transition-all duration-300 transform hover:scale-105 text-center"
+            >
               View My Work
-            </button>
-            <button className="px-8 py-3 border border-blue-400 text-blue-400 font-semibold rounded-lg hover:bg-blue-400 hover:text-white transition-all duration-300">
-              Download Resume
+            </Link>
+            <button
+              onClick={openPdfModal}
+              className="px-8 py-3 border border-blue-400 text-blue-400 font-semibold rounded-lg hover:bg-blue-400 hover:text-white transition-all duration-300 cursor-pointer"
+            >
+              View Resume
             </button>
           </div>
         </div>
@@ -166,6 +188,40 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* PDF Modal */}
+      {showPdfModal && (
+        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-xl shadow-2xl w-full max-w-4xl h-[90vh] flex flex-col">
+            {/* Modal Header */}
+            <div className="flex items-center justify-between p-4 border-b border-gray-200">
+              <h3 className="text-xl font-semibold text-gray-800">Resume - Christian Gil Alaan</h3>
+              <button
+                onClick={closePdfModal}
+                className="p-2 hover:bg-gray-100 rounded-lg transition-colors duration-200"
+              >
+                <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+
+            {/* PDF Viewer */}
+            <div className="flex-1 overflow-hidden">
+              <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.0.279/build/pdf.worker.min.js">
+                <Viewer
+                  fileUrl="/ChristianGil_Alaan_Resume.pdf"
+                  plugins={[toolbarPluginInstance]}
+                  onLoadError={(error) => {
+                    console.error('PDF Load Error:', error);
+                    alert('Error loading PDF. Please check if resume.pdf exists in the public folder.');
+                  }}
+                />
+              </Worker>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
