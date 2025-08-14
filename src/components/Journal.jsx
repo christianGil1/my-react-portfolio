@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const Journal = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
   const [currentMiniSlide, setCurrentMiniSlide] = useState(0);
 
   const projects = [
@@ -51,14 +52,16 @@ const Journal = () => {
     setCurrentSlide(index);
   };
 
-  // Auto-advance slideshow every 4 seconds
+  // Auto-advance slideshow every 4 seconds (pause on hover)
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % projects.length);
-    }, 4000); // 4 seconds
+    if (!isPaused) {
+      const interval = setInterval(() => {
+        setCurrentSlide((prev) => (prev + 1) % projects.length);
+      }, 4000); // 4 seconds
 
-    return () => clearInterval(interval); // Cleanup on unmount
-  }, [projects.length]);
+      return () => clearInterval(interval); // Cleanup on unmount
+    }
+  }, [projects.length, isPaused]);
 
   const miniProjects = [
     {
@@ -90,7 +93,11 @@ const Journal = () => {
         </div>
 
         {/* Project Slideshow */}
-        <div className="relative max-w-4xl mx-auto">
+        <div
+          className="relative max-w-4xl mx-auto"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
           {/* Main Slide Container */}
           <div className="overflow-hidden rounded-xl">
             <div
