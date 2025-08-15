@@ -101,7 +101,7 @@ const Home = () => {
               <div className="bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-2xl p-8 backdrop-blur-sm border border-blue-500/20">
                 <div className="grid grid-cols-2 gap-6 text-center">
                   <div>
-                    <div className="text-3xl font-bold text-white mb-2">2024</div>
+                    <div className="text-3xl font-bold text-white mb-2">2025</div>
                     <div className="text-gray-300 text-sm">Graduate</div>
                   </div>
                   <div>

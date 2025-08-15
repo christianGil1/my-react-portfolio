@@ -4,6 +4,10 @@ import { Outlet, Link, useLocation } from 'react-router-dom';
 const Layout = () => {
   const location = useLocation();
 
+  const handleNavClick = () => {
+    window.scrollTo(0, 0); // Instant scroll to top, no smooth animation
+  };
+
   const navItems = [
     { path: '/', label: 'Home' },
     { path: '/profile', label: 'About' },
@@ -29,6 +33,7 @@ const Layout = () => {
                 <Link
                   key={item.path}
                   to={item.path}
+                  onClick={handleNavClick}
                   className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
                     location.pathname === item.path
                       ? 'text-blue-400 bg-blue-400/10'
