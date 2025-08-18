@@ -4,6 +4,7 @@ import { Worker, Viewer } from '@react-pdf-viewer/core';
 import { toolbarPlugin } from '@react-pdf-viewer/toolbar';
 import '@react-pdf-viewer/core/lib/styles/index.css';
 import '@react-pdf-viewer/toolbar/lib/styles/index.css';
+import ScrollEffects from './ScrollEffects';
 
 const Home = () => {
   const [showPdfModal, setShowPdfModal] = useState(false);
@@ -22,7 +23,7 @@ const Home = () => {
       {/* Hero Section */}
       <section className="relative px-6 lg:px-8 pt-20 pb-32">
         <div className="mx-auto max-w-4xl text-center">
-          <div className="mb-8">
+          <ScrollEffects effect="scale" className="mb-8">
             <div className="relative inline-block">
               <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-r from-blue-400 to-cyan-400 p-1">
                 <img
@@ -33,7 +34,7 @@ const Home = () => {
                 />
               </div>
             </div>
-          </div>
+          </ScrollEffects>
 
           <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl mb-6">
             Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Christian Gil Alaan</span>

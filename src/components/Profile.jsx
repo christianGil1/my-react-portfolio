@@ -1,25 +1,27 @@
 import React from 'react';
+import ScrollEffects from './ScrollEffects';
 
 const Profile = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 px-6 lg:px-8 py-20">
       <div className="mx-auto max-w-6xl">
         {/* Header Section */}
-        <div className="text-center mb-16">
+        <ScrollEffects effect="parallax" className="text-center mb-16">
           <h1 className="text-4xl font-bold text-white mb-4">About Me</h1>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-cyan-400 mx-auto"></div>
-        </div>
+        </ScrollEffects>
 
         {/* Main Profile Section */}
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-          <div>
-            <h2 className="text-3xl font-semibold text-white mb-6">
-              Christian Gil Saldua Alaan
-            </h2>
-            <p className="text-gray-300 mb-6 leading-relaxed text-lg">
-              I'm a passionate full-stack developer and recent graduate from Xavier University with a Bachelor's degree in Information Technology.
-              I thrive on solving complex problems and am always eager to learn new tools and techniques.
-            </p>
+          <ScrollEffects effect="slide">
+            <div>
+              <h2 className="text-3xl font-semibold text-white mb-6">
+                Christian Gil Saldua Alaan
+              </h2>
+              <p className="text-gray-300 mb-6 leading-relaxed text-lg">
+                I'm a passionate full-stack developer and recent graduate from Xavier University with a Bachelor's degree in Information Technology.
+                I thrive on solving complex problems and am always eager to learn new tools and techniques.
+              </p>
             <p className="text-gray-300 mb-6 leading-relaxed">
               My goal is to continue growing my skills as a developer and contribute to innovative projects that
               make a real impact. I have hands-on experience in developing comprehensive web applications using modern technologies.
@@ -45,9 +47,10 @@ const Profile = () => {
                 <p><strong>Email:</strong> christiangilalaan@gmail.com</p>
               </div>
             </div>
-          </div>
+            </div>
+          </ScrollEffects>
 
-          <div className="flex flex-col items-center">
+          <ScrollEffects effect="scale" className="flex flex-col items-center">
             <div className="w-64 h-64 mb-6 rounded-full bg-gradient-to-r from-blue-400 to-cyan-400 p-1">
               <img
                 src="https://i.ibb.co/YfcjqBX/3.jpg"
@@ -76,7 +79,7 @@ const Profile = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </ScrollEffects>
         </div>
 
         {/* Education Section */}
