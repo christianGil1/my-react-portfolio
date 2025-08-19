@@ -1,5 +1,6 @@
 import React from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
+import ThemeToggle from './ThemeToggle';
 
 const Layout = () => {
   const location = useLocation();
@@ -15,34 +16,37 @@ const Layout = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-900">
+    <div className="min-h-screen bg-white dark:bg-slate-900 transition-colors duration-300">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-slate-900/95 backdrop-blur-sm border-b border-slate-700 z-50">
+      <nav className="fixed top-0 w-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm border-b border-blue-100 dark:border-slate-700 z-50 transition-colors duration-300 shadow-sm dark:shadow-none">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <Link to="/" className="text-xl font-bold text-white">
+            <Link to="/" className="text-xl font-bold text-slate-800 dark:text-white transition-colors duration-300">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
                 Portfolio
               </span>
             </Link>
 
             {/* Navigation Links */}
-            <div className="hidden md:flex space-x-8">
-              {navItems.map((item) => (
-                <Link
-                  key={item.path}
-                  to={item.path}
-                  onClick={handleNavClick}
-                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-                    location.pathname === item.path
-                      ? 'text-blue-400 bg-blue-400/10'
-                      : 'text-gray-300 hover:text-white hover:bg-slate-700'
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              ))}
+            <div className="hidden md:flex items-center space-x-6">
+              <div className="flex space-x-8">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    onClick={handleNavClick}
+                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                      location.pathname === item.path
+                        ? 'text-blue-600 bg-blue-50 dark:text-blue-400 dark:bg-blue-400/10'
+                        : 'text-slate-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-white hover:bg-blue-50 dark:hover:bg-slate-700'
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+              <ThemeToggle />
             </div>
 
             {/* Mobile menu button */}

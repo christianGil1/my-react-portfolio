@@ -19,7 +19,7 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-slate-900 dark:via-blue-900 dark:to-slate-900 transition-colors duration-300">
       {/* Hero Section */}
       <section className="relative px-6 lg:px-8 pt-20 pb-32">
         <div className="mx-auto max-w-4xl text-center">
@@ -36,12 +36,12 @@ const Home = () => {
             </div>
           </ScrollEffects>
 
-          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl mb-6">
-            Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Christian Gil Alaan</span>
+          <h1 className="text-4xl font-bold tracking-tight text-slate-800 dark:text-white sm:text-6xl mb-6 transition-colors duration-300">
+            Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-cyan-400">Christian Gil Alaan</span>
           </h1>
 
-          <p className="text-xl leading-8 text-gray-300 mb-8 max-w-2xl mx-auto">
-            Recent IT graduate and Software Engineer Intern with hands-on experience in full-stack development.
+          <p className="text-xl leading-8 text-slate-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto transition-colors duration-300">
+            IT graduate and Software Engineer Intern with hands-on experience in full-stack development.
             Passionate about creating innovative web solutions using modern technologies like Laravel and React.
           </p>
 
@@ -67,55 +67,55 @@ const Home = () => {
       </section>
 
       {/* About Section */}
-      <section className="px-6 lg:px-8 py-20 bg-slate-800/50">
+      <section className="px-6 lg:px-8 py-20 bg-white/80 dark:bg-slate-800/50 transition-colors duration-300">
         <div className="mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-white mb-4">About Me</h2>
+            <h2 className="text-3xl font-bold text-slate-800 dark:text-white mb-4 transition-colors duration-300">About Me</h2>
             <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-cyan-400 mx-auto"></div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h3 className="text-2xl font-semibold text-white mb-6">
-                Recent Graduate & Software Engineer
+              <h3 className="text-2xl font-semibold text-slate-800 dark:text-white mb-6 transition-colors duration-300">
+                IT Graduate & Software Engineer
               </h3>
-              <p className="text-gray-300 mb-6 leading-relaxed">
+              <p className="text-slate-600 dark:text-gray-300 mb-6 leading-relaxed transition-colors duration-300">
                 I'm a recent Bachelor of Science in Information Technology graduate from Xavier University
                 with hands-on experience as a Software Engineer Intern at Fligno Software. I thrive on
                 solving complex problems and am always eager to learn new tools and techniques.
               </p>
 
               <div className="flex flex-wrap gap-3">
-                <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">
+                <span className="px-3 py-1 bg-blue-100 dark:bg-blue-500/20 text-blue-700 dark:text-blue-300 rounded-full text-sm transition-colors duration-300">
                   Problem Solving
                 </span>
-                <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">
+                <span className="px-3 py-1 bg-blue-100 dark:bg-blue-500/20 text-blue-700 dark:text-blue-300 rounded-full text-sm transition-colors duration-300">
                   Full-Stack Development
                 </span>
-                <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">
+                <span className="px-3 py-1 bg-blue-100 dark:bg-blue-500/20 text-blue-700 dark:text-blue-300 rounded-full text-sm transition-colors duration-300">
                   Continuous Learning
                 </span>
               </div>
             </div>
 
             <div className="relative">
-              <div className="bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-2xl p-8 backdrop-blur-sm border border-blue-500/20">
+              <div className="bg-gradient-to-r from-blue-100/80 to-purple-100/80 dark:from-blue-500/20 dark:to-cyan-500/20 rounded-2xl p-8 backdrop-blur-sm border border-blue-200 dark:border-blue-500/20 transition-colors duration-300">
                 <div className="grid grid-cols-2 gap-6 text-center">
                   <div>
-                    <div className="text-3xl font-bold text-white mb-2">2025</div>
-                    <div className="text-gray-300 text-sm">Graduate</div>
+                    <div className="text-3xl font-bold text-slate-800 dark:text-white mb-2 transition-colors duration-300">2025</div>
+                    <div className="text-slate-600 dark:text-gray-300 text-sm transition-colors duration-300">Graduate</div>
                   </div>
                   <div>
-                    <div className="text-3xl font-bold text-white mb-2">3.4</div>
-                    <div className="text-gray-300 text-sm">GPA</div>
+                    <div className="text-3xl font-bold text-slate-800 dark:text-white mb-2 transition-colors duration-300">3.4</div>
+                    <div className="text-slate-600 dark:text-gray-300 text-sm transition-colors duration-300">GPA</div>
                   </div>
                   <div>
-                    <div className="text-3xl font-bold text-white mb-2">4</div>
-                    <div className="text-gray-300 text-sm">Cisco Certs</div>
+                    <div className="text-3xl font-bold text-slate-800 dark:text-white mb-2 transition-colors duration-300">4</div>
+                    <div className="text-slate-600 dark:text-gray-300 text-sm transition-colors duration-300">Cisco Certs</div>
                   </div>
                   <div>
-                    <div className="text-3xl font-bold text-white mb-2">2</div>
-                    <div className="text-gray-300 text-sm">Internships</div>
+                    <div className="text-3xl font-bold text-slate-800 dark:text-white mb-2 transition-colors duration-300">2</div>
+                    <div className="text-slate-600 dark:text-gray-300 text-sm transition-colors duration-300">Internships</div>
                   </div>
                 </div>
               </div>
@@ -128,22 +128,22 @@ const Home = () => {
       <section className="px-6 lg:px-8 py-20">
         <div className="mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-white mb-4">Skills & Technologies</h2>
+            <h2 className="text-3xl font-bold text-slate-800 dark:text-white mb-4 transition-colors duration-300">Skills & Technologies</h2>
             <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-cyan-400 mx-auto"></div>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {/* Web Development */}
-            <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700 hover:border-blue-500/50 transition-all duration-300">
+            <div className="bg-white/80 dark:bg-slate-800/50 rounded-xl p-6 border border-blue-200 dark:border-slate-700 hover:border-blue-400 dark:hover:border-blue-500/50 transition-all duration-300 shadow-sm dark:shadow-none">
               <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mb-4">
                 <span className="text-white font-bold">WD</span>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-4">Web Development</h3>
+              <h3 className="text-xl font-semibold text-slate-800 dark:text-white mb-4 transition-colors duration-300">Web Development</h3>
               <div className="space-y-3">
                 {['Laravel', 'React', 'PHP', 'JavaScript', 'Tailwind CSS', 'Bootstrap'].map((skill) => (
                   <div key={skill} className="flex items-center justify-between">
-                    <span className="text-gray-300">{skill}</span>
-                    <div className="w-20 h-2 bg-slate-700 rounded-full overflow-hidden">
+                    <span className="text-slate-600 dark:text-gray-300 transition-colors duration-300">{skill}</span>
+                    <div className="w-20 h-2 bg-gray-200 dark:bg-slate-700 rounded-full overflow-hidden">
                       <div className="h-full bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full" style={{width: '90%'}}></div>
                     </div>
                   </div>
@@ -152,16 +152,16 @@ const Home = () => {
             </div>
 
             {/* Database & Infrastructure */}
-            <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700 hover:border-blue-500/50 transition-all duration-300">
+            <div className="bg-white/80 dark:bg-slate-800/50 rounded-xl p-6 border border-blue-200 dark:border-slate-700 hover:border-blue-400 dark:hover:border-blue-500/50 transition-all duration-300 shadow-sm dark:shadow-none">
               <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mb-4">
                 <span className="text-white font-bold">DB</span>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-4">Database & Infrastructure</h3>
+              <h3 className="text-xl font-semibold text-slate-800 dark:text-white mb-4 transition-colors duration-300">Database & Infrastructure</h3>
               <div className="space-y-3">
                 {['MySQL', 'Firebase', 'Laragon', 'phpMyAdmin', 'Azure Portal', 'API Integration'].map((skill) => (
                   <div key={skill} className="flex items-center justify-between">
-                    <span className="text-gray-300">{skill}</span>
-                    <div className="w-20 h-2 bg-slate-700 rounded-full overflow-hidden">
+                    <span className="text-slate-600 dark:text-gray-300 transition-colors duration-300">{skill}</span>
+                    <div className="w-20 h-2 bg-gray-200 dark:bg-slate-700 rounded-full overflow-hidden">
                       <div className="h-full bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full" style={{width: '85%'}}></div>
                     </div>
                   </div>
@@ -170,16 +170,16 @@ const Home = () => {
             </div>
 
             {/* Development Tools */}
-            <div className="bg-slate-800/50 rounded-xl p-6 border border-slate-700 hover:border-blue-500/50 transition-all duration-300">
+            <div className="bg-white/80 dark:bg-slate-800/50 rounded-xl p-6 border border-blue-200 dark:border-slate-700 hover:border-blue-400 dark:hover:border-blue-500/50 transition-all duration-300 shadow-sm dark:shadow-none">
               <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mb-4">
                 <span className="text-white font-bold">DT</span>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-4">Development Tools</h3>
+              <h3 className="text-xl font-semibold text-slate-800 dark:text-white mb-4 transition-colors duration-300">Development Tools</h3>
               <div className="space-y-3">
                 {['Visual Studio Code', 'Git', 'GitHub', 'Postman', 'Vite', 'Swagger/OpenAPI'].map((skill) => (
                   <div key={skill} className="flex items-center justify-between">
-                    <span className="text-gray-300">{skill}</span>
-                    <div className="w-20 h-2 bg-slate-700 rounded-full overflow-hidden">
+                    <span className="text-slate-600 dark:text-gray-300 transition-colors duration-300">{skill}</span>
+                    <div className="w-20 h-2 bg-gray-200 dark:bg-slate-700 rounded-full overflow-hidden">
                       <div className="h-full bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full" style={{width: '88%'}}></div>
                     </div>
                   </div>

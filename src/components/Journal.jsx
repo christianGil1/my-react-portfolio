@@ -117,7 +117,7 @@ const Journal = () => {
     {
       title: "To-Do App",
       image: "https://i.ibb.co/0jkdkCg/image.png",
-      technologies: ["JavaScript", "HTML", "CSS"]
+      technologies: ["JavaScript", "PHP", "HTML", "CSS"]
     },
     {
       title: "Search Filter App",
@@ -127,12 +127,12 @@ const Journal = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 px-6 lg:px-8 py-20">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-slate-900 dark:via-blue-900 dark:to-slate-900 px-6 lg:px-8 py-20 transition-colors duration-300">
       <div className="mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-white mb-4">My Projects</h1>
+          <h1 className="text-4xl font-bold text-slate-800 dark:text-white mb-4 transition-colors duration-300">My Projects</h1>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-cyan-400 mx-auto mb-6"></div>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+          <p className="text-slate-600 dark:text-gray-300 text-lg max-w-2xl mx-auto transition-colors duration-300">
             Here are some of my recent projects that showcase my skills and passion for development.
           </p>
         </div>
@@ -162,12 +162,12 @@ const Journal = () => {
             >
               {projects.map((project, index) => (
                 <div key={index} className="w-full flex-shrink-0">
-                  <div className="bg-slate-800/50 rounded-xl overflow-hidden border border-slate-700 hover:border-blue-500/50 transition-all duration-300 mx-2">
+                  <div className="bg-white/90 dark:bg-slate-800/50 rounded-xl overflow-hidden border border-blue-200 dark:border-slate-700 hover:border-blue-400 dark:hover:border-blue-500/50 transition-all duration-300 mx-2 shadow-lg dark:shadow-none">
                     <div className="relative overflow-hidden">
                       <img
                         src={project.image}
                         alt={project.title}
-                        className="w-full h-64 object-contain bg-slate-900/50 transition-transform duration-300"
+                        className="w-full h-64 object-contain bg-gray-100 dark:bg-slate-900/50 transition-transform duration-300"
                       />
                       <div className="absolute inset-0 bg-blue-600/20 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
@@ -175,25 +175,25 @@ const Journal = () => {
                     <div className="p-8">
                       {project.period && (
                         <div className="text-center mb-4">
-                          <span className="px-4 py-2 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 text-blue-300 rounded-full text-sm font-semibold border border-blue-400/30">
+                          <span className="px-4 py-2 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-500/20 dark:to-cyan-500/20 text-blue-700 dark:text-blue-300 rounded-full text-sm font-semibold border border-blue-300 dark:border-blue-400/30 transition-colors duration-300">
                             {project.period}
                           </span>
                         </div>
                       )}
 
-                      <h3 className="text-2xl font-semibold text-white mb-3 text-center">{project.title}</h3>
+                      <h3 className="text-2xl font-semibold text-slate-800 dark:text-white mb-3 text-center transition-colors duration-300">{project.title}</h3>
 
                       {project.type && (
-                        <p className="text-cyan-300 text-center font-medium mb-4">{project.type}</p>
+                        <p className="text-cyan-600 dark:text-cyan-300 text-center font-medium mb-4 transition-colors duration-300">{project.type}</p>
                       )}
 
-                      <p className="text-gray-300 mb-6 leading-relaxed text-center">{project.description}</p>
+                      <p className="text-slate-600 dark:text-gray-300 mb-6 leading-relaxed text-center transition-colors duration-300">{project.description}</p>
 
                       <div className="flex flex-wrap gap-2 justify-center">
                         {project.technologies.map((tech, techIndex) => (
                           <span
                             key={techIndex}
-                            className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm"
+                            className="px-3 py-1 bg-blue-100 dark:bg-blue-500/20 text-blue-700 dark:text-blue-300 rounded-full text-sm transition-colors duration-300"
                           >
                             {tech}
                           </span>
@@ -244,14 +244,14 @@ const Journal = () => {
         {/* Mini Projects Section */}
         <div className="mt-16">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white mb-4">Mini Projects</h2>
+            <h2 className="text-3xl font-bold text-slate-800 dark:text-white mb-4 transition-colors duration-300">Mini Projects</h2>
             <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-cyan-400 mx-auto mb-6"></div>
-            <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+            <p className="text-slate-600 dark:text-gray-300 text-lg max-w-2xl mx-auto transition-colors duration-300">
               A collection of smaller projects that showcase different skills and technologies.
             </p>
           </div>
 
-          <div className="relative bg-slate-800/50 rounded-xl p-8 border border-slate-700 hover:border-blue-500/50 transition-all duration-300 max-w-4xl mx-auto shadow-lg shadow-blue-900/20">
+          <div className="relative bg-white/90 dark:bg-slate-800/50 rounded-xl p-8 border border-blue-200 dark:border-slate-700 hover:border-blue-400 dark:hover:border-blue-500/50 transition-all duration-300 max-w-4xl mx-auto shadow-lg dark:shadow-blue-900/20">
             {/* Gradient overlay for depth */}
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 rounded-xl pointer-events-none z-0"></div>
 
@@ -274,8 +274,8 @@ const Journal = () => {
               />
             </div>
 
-            <h3 className="text-xl font-semibold text-white mb-4 text-center">Collection of Mini Projects</h3>
-            <p className="text-gray-300 text-center mb-6">
+            <h3 className="text-xl font-semibold text-slate-800 dark:text-white mb-4 text-center transition-colors duration-300">Collection of Mini Projects</h3>
+            <p className="text-slate-600 dark:text-gray-300 text-center mb-6 transition-colors duration-300">
               A collection of projects including a to-do app, notes app, search filtering app, and other applications that I developed to practice different technologies and concepts.
             </p>
 
@@ -284,7 +284,7 @@ const Journal = () => {
                 project.technologies.map((tech, techIndex) => (
                   <span
                     key={`${index}-${techIndex}`}
-                    className="px-2 py-1 bg-blue-500/20 text-blue-300 rounded text-xs"
+                    className="px-2 py-1 bg-blue-100 dark:bg-blue-500/20 text-blue-700 dark:text-blue-300 rounded text-xs transition-colors duration-300"
                   >
                     {tech}
                   </span>
