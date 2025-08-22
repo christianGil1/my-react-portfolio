@@ -41,8 +41,8 @@ const Home = () => {
           </h1>
 
           <p className="text-xl leading-8 text-slate-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto transition-colors duration-300">
-            IT graduate and Software Engineer Intern with hands-on experience in full-stack development.
-            Passionate about creating innovative web solutions using modern technologies like Laravel and React.
+            IT graduate with hands-on experience in full-stack development.
+            Passionate about creating innovative web solutions using modern technologies.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
