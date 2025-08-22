@@ -11,7 +11,7 @@ const Journal = () => {
   const projects = [
     {
       title: "XU - Physical Plant Office Work Order System",
-      description: "A web-based work order and resource management system designed to streamline operations for the Physical Plant Office with user authentication and real-time notifications.",
+      description: "A Progressive Web App (PWA) for work order and resource management system designed to streamline operations for the Physical Plant Office with user authentication and real-time notifications.",
       technologies: ["Laravel", "Bootstrap", "PostgreSQL", "Digital Ocean"],
       image: "https://i.ibb.co/7TJsDkz/Picture1.png",
       period: "MAR 2025 - MAY 2025",
