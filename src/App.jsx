@@ -6,7 +6,7 @@ import { ThemeProvider } from './contexts/ThemeContext';
 function App() {
   return (
     <ThemeProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/my-react-portfolio">
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
