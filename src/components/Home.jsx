@@ -209,7 +209,7 @@ const Home = () => {
 
             {/* PDF Viewer */}
             <div className="flex-1 overflow-hidden">
-              <Worker workerUrl={`https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js`}>
+              <Worker workerUrl={`https://unpkg.com/pdfjs-dist@3.0.279/build/pdf.worker.min.js`}>
                 <Viewer
                   fileUrl="/ChristianGil_Alaan_Resume.pdf"
                   plugins={[toolbarPluginInstance]}
