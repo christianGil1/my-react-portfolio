@@ -211,7 +211,7 @@ const Home = () => {
             <div className="flex-1 overflow-hidden">
               <Worker workerUrl={`https://unpkg.com/pdfjs-dist@3.0.279/build/pdf.worker.min.js`}>
                 <Viewer
-                  fileUrl="/ChristianGil_Alaan_Resume.pdf"
+                  fileUrl={`${import.meta.env.BASE_URL}ChristianGil_Alaan_Resume.pdf`}
                   plugins={[toolbarPluginInstance]}
                   onLoadError={(error) => {
                     console.error("PDF Load Error:", error);
