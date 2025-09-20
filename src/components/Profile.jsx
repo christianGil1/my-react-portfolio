@@ -74,8 +74,8 @@ const Profile = () => {
                   <div className="text-slate-600 dark:text-gray-300 text-xs transition-colors duration-300">Projects</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-slate-800 dark:text-white mb-1 transition-colors duration-300">2</div>
-                  <div className="text-slate-600 dark:text-gray-300 text-xs transition-colors duration-300">Internships</div>
+                  <div className="text-2xl font-bold text-slate-800 dark:text-white mb-1 transition-colors duration-300">1</div>
+                  <div className="text-slate-600 dark:text-gray-300 text-xs transition-colors duration-300">Internship</div>
                 </div>
               </div>
             </div>

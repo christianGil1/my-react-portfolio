@@ -114,8 +114,8 @@ const Home = () => {
                     <div className="text-slate-600 dark:text-gray-300 text-sm transition-colors duration-300">Cisco Certs</div>
                   </div>
                   <div>
-                    <div className="text-3xl font-bold text-slate-800 dark:text-white mb-2 transition-colors duration-300">2</div>
-                    <div className="text-slate-600 dark:text-gray-300 text-sm transition-colors duration-300">Internships</div>
+                    <div className="text-3xl font-bold text-slate-800 dark:text-white mb-2 transition-colors duration-300">1</div>
+                    <div className="text-slate-600 dark:text-gray-300 text-sm transition-colors duration-300">Internship</div>
                   </div>
                 </div>
               </div>
