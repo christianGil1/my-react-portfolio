@@ -107,7 +107,7 @@ const Home = () => {
                   </div>
                   <div>
                     <div className="text-3xl font-bold text-slate-800 dark:text-white mb-2 transition-colors duration-300">3.4</div>
-                    <div className="text-slate-600 dark:text-gray-300 text-sm transition-colors duration-300">GPA</div>
+                    <div className="text-slate-600 dark:text-gray-300 text-sm transition-colors duration-300">QPI</div>
                   </div>
                   <div>
                     <div className="text-3xl font-bold text-slate-800 dark:text-white mb-2 transition-colors duration-300">4</div>

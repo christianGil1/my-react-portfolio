@@ -67,7 +67,7 @@ const Profile = () => {
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-slate-800 dark:text-white mb-1 transition-colors duration-300">3.4</div>
-                  <div className="text-slate-600 dark:text-gray-300 text-xs transition-colors duration-300">GPA</div>
+                  <div className="text-slate-600 dark:text-gray-300 text-xs transition-colors duration-300">QPI</div>
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-slate-800 dark:text-white mb-1 transition-colors duration-300">5+</div>
@@ -94,7 +94,7 @@ const Profile = () => {
             <div className="border-l-4 border-blue-400 pl-6">
               <h4 className="text-lg font-semibold text-slate-800 dark:text-white transition-colors duration-300">Bachelor of Science in Information Technology</h4>
               <p className="text-blue-600 dark:text-blue-300 transition-colors duration-300">Xavier University – Ateneo de Cagayan</p>
-              <p className="text-slate-500 dark:text-gray-400 text-sm transition-colors duration-300">2021 – 2025 | GPA: 3.4</p>
+              <p className="text-slate-500 dark:text-gray-400 text-sm transition-colors duration-300">2021 – 2025 | QPI: 3.4</p>
               <p className="text-slate-600 dark:text-gray-300 mt-2 transition-colors duration-300">Recent graduate with comprehensive foundation in software development, database management, system analysis, and modern web technologies.</p>
             </div>
           </div>
