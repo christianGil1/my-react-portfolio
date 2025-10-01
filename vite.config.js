@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-  base:"/my-react-portfolio/",
+  // if deploying to vercel, use '/' else '/my-react-portfolio/'
+  base: process.env.VERCEL ? '/' : '/my-react-portfolio/',
   plugins: [react(), tailwindcss()],
 })
